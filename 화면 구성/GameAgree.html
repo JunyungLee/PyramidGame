@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AreYouAgree</title>
+    <style>
+        p {
+            text-align: center;
+        }
+        h2 {
+            padding-top: 150px;
+            text-align: center;
+        }
+        button {
+            border: none;
+           display: block;
+            margin: auto;
+            background-color: white;
+            border-collapse: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="AllContainer" style="background-color: black; height: 100vh">
+    <h2 style="color: white;"> 규칙 설명</h2>
+        <div id="rules">
+           <p style="color: white;"> A,B,C,D 4등급</p>
+            <p style="color: white;">0표는 열외, F등급</p>
+            <p style="color: white;">등급별 차등 혜택</p>
+            <p style="color: white;">1인 5표 행사 가능</p>
+            <p style="color: white;">본인 및 동일 인물에게 중복 투표 불가</p>
+            <p style="color: white;">매달 마지막 주 목요일 5교시에 진행</p>
+            <p style="color: white;">투표 결과는 다음 게임 진행 전까지 유지</p>
+
+            <p style="color: red">단, 게임을 외부로 유출 시,</p>
+            <p style="color: red"> 그에 상응하는 최고 수위 벌칙이 따른다.</p>
+            <p style="color: white;"><input type="checkbox" id="agreeCheckbox">  위 규칙에 동의합니다.</input></p>
+            <button type="button" id="confirmButton">확인</button>
+        </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const confirmButton = document.getElementById('confirmButton');
+        const agreeCheckbox = document.getElementById('agreeCheckbox');
+
+        confirmButton.addEventListener('click', function () {
+            if (agreeCheckbox.checked) {
+                window.location.href = "GameMain.html";
+            } else {
+                alert("규칙에 동의해야 게임을 시작할 수 있습니다.");
+            }
+        });
+    });
+</script>
+</body>
+</html>
